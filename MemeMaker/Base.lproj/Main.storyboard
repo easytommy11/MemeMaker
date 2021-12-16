@@ -54,15 +54,23 @@
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="0Uk-rC-UUm">
                                 <rect key="frame" x="0.0" y="112" width="390" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="3" height="2"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="tui-nQ-2DZ" appends="YES" id="wch-4f-WVn"/>
+                                </connections>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="NNS-Fe-iJ3" appends="YES" id="78i-2K-fh9"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="bottomCaptionLabel" destination="mr7-Zf-qmo" id="k8m-Rz-IZc"/>
@@ -72,6 +80,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tui-nQ-2DZ" userLabel="Top Caption Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="dragTopLabel:" destination="BYZ-38-t0r" id="DmH-gL-Ais"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="NNS-Fe-iJ3" userLabel="Bottom Caption Pan Gesture Recognizer">
+                    <connections>
+                        <action selector="dragBottonLabel:" destination="BYZ-38-t0r" id="L7N-lZ-r2f"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="20" y="81.753554502369667"/>
         </scene>

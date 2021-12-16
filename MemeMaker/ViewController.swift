@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     var topChoices: [CaptionOption] = [CaptionOption(emoji: "🧍‍♂️", caption:"Did we have homework?"), CaptionOption(emoji: "😐", caption:"Lebron is better than Durant."), CaptionOption(emoji: "🙄", caption: "We have to wear blazers tomorrow?")]
     
-    var bottomChoices:[CaptionOption] = [CaptionOption(emoji:"😑", caption:"Dont know, Dont care."), CaptionOption(emoji: "🤨", caption: "Are you crazy?"), CaptionOption(emoji: "😪", caption: "Yea not me stay safe tho.")]
+    var bottomChoices:[CaptionOption] = [CaptionOption(emoji:"😑", caption:"Dont know, Dont care."), CaptionOption(emoji: "🤨", caption: "Are you crazy?"), CaptionOption(emoji: "😪", caption: "Yea not me tho, stay safe tho.")]
     
     
     override func viewDidLoad() {
@@ -55,6 +55,16 @@ class ViewController: UIViewController {
        
     }
     
-
+    @IBAction func dragTopLabel(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .changed {
+            topCaptionLabel.center = sender.location(in: view)
+        }
+    }
+    
+    @IBAction func dragBottonLabel(_ sender: UIPanGestureRecognizer) {
+        if sender.state == .changed {
+            bottomCaptionLabel.center = sender.location(in: view)
+        }
+    }
 }
 
